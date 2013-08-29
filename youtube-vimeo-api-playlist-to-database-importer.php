@@ -3,7 +3,8 @@ date_default_timezone_set('America/Los_Angeles');
 mysql_connect("localhost", "user", "pass") or die("error connect");
 mysql_select_db("db");
 
-$api = file_get_contents("http://gdata.youtube.com/feeds/api/users/UCLAAnderson/uploads?v=2&alt=jsonc&start-index=101&max-results=50");
+$user = '';
+$api = file_get_contents("http://gdata.youtube.com/feeds/api/users/" . $user . "/uploads?v=2&alt=jsonc&start-index=101&max-results=50");
 $data = json_decode($api);
 $data = $data->data->items;
 //print_r($data);
