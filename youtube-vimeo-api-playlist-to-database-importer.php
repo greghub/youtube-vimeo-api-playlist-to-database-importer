@@ -27,7 +27,7 @@ foreach ($data as $key => $row) {
 }
 
 
-$api = file_get_contents("http://vimeo.com/api/v2/uclaanderson/all_videos.json");
+$api = file_get_contents("http://vimeo.com/api/v2/" . $user . "/all_videos.json");
 
 $data = json_decode($api);
 //print_r($data); 
